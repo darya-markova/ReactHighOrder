@@ -1,11 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class App extends Component {
-  render() {
+import Form from './components/Form';
+import List from './components/List';
+
+import withCrud from './wrappers/withCrud';
+
+const App = ({data, create, update, remove}) => {
     return (
-      null
-    );
-  }
-}
+        <div>
+            <h1>App</h1>
+            <Form onSubmit={create}/>
 
-export default App;
+            <List
+                todos={data}
+                onToggle={update}
+                onRemove={remove}/>
+        </div>
+    );
+};
+
+export default withCrud(App, '/api/todos');
