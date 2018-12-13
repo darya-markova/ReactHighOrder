@@ -1,8 +1,10 @@
 import React from 'react';
 
 const List = ({ todos, onToggle, onRemove }) => {
+
     return (
         <div>
+            <h2>List Component</h2>
             {
                 todos.map(todo =>
                     <div key={todo.id}>
@@ -17,4 +19,5 @@ const List = ({ todos, onToggle, onRemove }) => {
         </div>
     )
 };
+
 export default List;

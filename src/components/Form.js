@@ -6,15 +6,17 @@ const Form = ({onSubmit}) => {
     const handleSubmit = event => {
         event.preventDefault();
 
-        onSubmit({
-            title: input.value
-        });
+        /*onSubmit({
+            value: input.value
+        });*/
+        onSubmit(input.value);
 
         input.value = '';
     };
 
     return (
         <form onSubmit={handleSubmit}>
+            <h2>Form Component</h2>
             <div>
                 <input ref={element => input = element} />
                 <span>

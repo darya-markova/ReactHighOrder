@@ -8,27 +8,26 @@ const withCrud = (WrappedComponent, apiUrl) => {
         };
 
         componentDidMount() {
-            console.log('WITH CRUD', apiUrl);
-            this.get();
+            //this.get();
         }
 
         get = () => {
-            axios.get(apiUrl)
+            /*axios.get(apiUrl)
                 .then(response => response.data)
-                .then(data => this.setState({data}));
+                .then(data => this.setState({data}));*/
         };
 
         create = (data) => {
-            axios.post(apiUrl, data)
+           /* axios.post(apiUrl, data)
                 .then(response => response.data)
                 .then(createdItem => {
                     const data = [...this.state.data, createdItem];
                     this.setState({data});
-                });
+                });*/
         };
 
         update = id => {
-            axios.patch(`${apiUrl}/${id}`)
+           /* axios.patch(`${apiUrl}/${id}`)
                 .then(response => response.data)
                 .then(updatedItem => {
                     const data = this.state.data.map(item => {
@@ -43,19 +42,20 @@ const withCrud = (WrappedComponent, apiUrl) => {
                     });
 
                     this.setState({data});
-                });
+                });*/
         };
 
         remove = id => {
-            axios.delete(`${apiUrl}/${id}`)
+            /*axios.delete(`${apiUrl}/${id}`)
                 .then(response => response.data)
                 .then(() => {
                     const data = this.state.data.filter(item => item.id !== id);
                     this.setState({data});
-                });
-        }
+                });*/
+        };
 
         render() {
+            //return connect
             return <WrappedComponent
                 data={this.state.data}
                 get={this.get}
